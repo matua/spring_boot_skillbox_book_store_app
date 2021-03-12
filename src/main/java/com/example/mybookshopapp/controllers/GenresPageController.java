@@ -8,25 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
-public class MainPageController {
+@RequestMapping("/genres")
+public class GenresPageController {
 
     private final BookService bookService;
 
     @Autowired
-    public MainPageController(BookService bookService) {
+    public GenresPageController(BookService bookService) {
         this.bookService = bookService;
     }
 
-    @GetMapping("/bookshop/main")
-    public String mainPage(Model model) {
-        model.addAttribute("bookData", bookService.getBookData());
-        return "index";
-    }
-
     @GetMapping("/index.html")
-    public String mainPageFromPtherPages(Model model) {
-        model.addAttribute("bookData", bookService.getBookData());
-        return "index";
+    public String mainPage(Model model) {
+        return "/genres/index";
     }
 }
