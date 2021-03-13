@@ -18,6 +18,11 @@ public class MainPageController {
         this.bookService = bookService;
     }
 
+    @GetMapping()
+    public String redirectToMain(Model model) {
+        return "redirect:/bookshop/main";
+    }
+
     @GetMapping("/bookshop/main")
     public String mainPage(Model model) {
         model.addAttribute("bookData", bookService.getBookData());
