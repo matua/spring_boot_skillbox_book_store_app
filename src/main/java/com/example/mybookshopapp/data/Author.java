@@ -8,16 +8,18 @@ public class Author {
         return id;
     }
 
-    public void setId(Integer id) {
+    public Author setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public String getAuthorName() {
         return authorName;
     }
 
-    public void setAuthorName(String authorName) {
+    public Author setAuthorName(String authorName) {
         this.authorName = authorName;
+        return this;
     }
 
     @Override

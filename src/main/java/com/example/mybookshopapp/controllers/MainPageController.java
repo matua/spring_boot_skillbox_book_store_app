@@ -1,6 +1,6 @@
 package com.example.mybookshopapp.controllers;
 
-import com.example.mybookshopapp.data.BookService;
+import com.example.mybookshopapp.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class MainPageController {
 
-    private final BookService bookService;
+    private final BookRepository bookRepository;
 
     @Autowired
-    public MainPageController(BookService bookService) {
-        this.bookService = bookService;
+    public MainPageController(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     @GetMapping()
@@ -25,13 +25,13 @@ public class MainPageController {
 
     @GetMapping("/bookshop/main")
     public String mainPage(Model model) {
-        model.addAttribute("bookData", bookService.getBookData());
+        model.addAttribute("bookData", bookRepository.getBookData());
         return "index";
     }
 
     @GetMapping("/index.html")
     public String mainPageFromPtherPages(Model model) {
-        model.addAttribute("bookData", bookService.getBookData());
+        model.addAttribute("bookData", bookRepository.getBookData());
         return "index";
     }
 }

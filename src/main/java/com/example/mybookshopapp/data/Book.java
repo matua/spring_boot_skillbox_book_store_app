@@ -11,40 +11,45 @@ public class Book {
         return id;
     }
 
-    public void setId(Integer id) {
+    public Book setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public Book setAuthor(String author) {
         this.author = author;
+        return this;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public Book setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     public String getPriceOld() {
         return priceOld;
     }
 
-    public void setPriceOld(String priceOld) {
+    public Book setPriceOld(String priceOld) {
         this.priceOld = priceOld;
+        return this;
     }
 
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public Book setPrice(String price) {
         this.price = price;
+        return this;
     }
 
     @Override
