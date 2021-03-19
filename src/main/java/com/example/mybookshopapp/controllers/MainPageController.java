@@ -26,12 +26,14 @@ public class MainPageController {
     @GetMapping("/bookshop/main")
     public String mainPage(Model model) {
         model.addAttribute("bookData", bookRepository.getBookData());
+        model.addAttribute("searchPlaceholder", "new search placeholder");
         return "index";
     }
 
     @GetMapping("/index.html")
     public String mainPageFromPtherPages(Model model) {
         model.addAttribute("bookData", bookRepository.getBookData());
+        model.addAttribute("searchPlaceholder", "new search placeholder");
         return "index";
     }
 }
